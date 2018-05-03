@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, HttpModule, Headers } from '@angular/http';
 import { User } from './user';
 import 'rxjs/add/operator/map';
 
@@ -24,7 +24,7 @@ export class UserService {
 
   // delete UserService
   deleteUser(id) {
-    return this.http.delete('http://localhost:3000/api/user' + id)
+    return this.http.delete('http://localhost:3000/api/user/' + id)
       .map(res => res.json());
   }
 
